@@ -31,7 +31,6 @@ function from_entry.path(entry, validate, escape)
     --                  this would lead to cache misses in the perviewer.
     --                  Requires overall refactoring in previewer interface
     local escaped_path = vim.fn.escape(path, '[')
-    print("Path = " .. escaped_path)
     local expanded = vim.fn.expand(escaped_path)
     if (vim.fn.filereadable(expanded) + vim.fn.isdirectory(expanded)) == 0 then
       return
